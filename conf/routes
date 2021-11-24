@@ -1,0 +1,31 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+GET      /scala-play-pubsub/ping                       controllers.PubSubController.ping()
+
++ nocsrf
+POST     /scala-play-pubsub/topic                       controllers.PubSubController.createTopic()
+
++ nocsrf
+POST     /scala-play-pubsub/pull-subscription           controllers.PubSubController.createPullSubscription()
+
++ nocsrf
+POST     /scala-play-pubsub/push-subscription           controllers.PubSubController.createPushSubscriptionTopic()
+
++ nocsrf
+POST     /scala-play-pubsub/message                     controllers.PubSubController.publishMessage()
+
++ nocsrf
+POST     /scala-play-pubsub/read-message                controllers.PubSubController.receiveMessagesWithDeliveryAttemptsExample()
+
+### Alpakka
++ nocsrf
+POST     /scala-play-pubsub/message-alpakka             controllers.PubSubController.sendMessageAlpakka()
+
++ nocsrf
+POST     /scala-play-pubsub/read-message-alpakka        controllers.PubSubController.receiveMessageAlpakka()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
