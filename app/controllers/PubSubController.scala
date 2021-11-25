@@ -31,12 +31,6 @@ class PubSubController @Inject()(
    * a path of `/`.
    */
 
-//  val projectId = "starry-arbor-256821";
-//  val topicId = "MyFirstTopic-API";
-//  val subscriptionId = "your-subscription-id";
-//  val pushEndpoint = "https://my-test-project.appspot.com/push"
-//  val ACK_DEADLINE_SECONDS: Int = 10
-
   def ping() = Action { implicit request =>
     Ok("pong")
   }
